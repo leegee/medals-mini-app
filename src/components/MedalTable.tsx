@@ -58,7 +58,7 @@ export default function MedalTable({
                             {index + 1}
                         </td>
                         <td className={styles.code}>
-                            <Flag code='code' />
+                            <Flag code={entry.code} />
                             {entry.code}
                         </td>
                         <td>

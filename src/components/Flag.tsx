@@ -1,5 +1,8 @@
-export default function Flag() {
+interface IFlagProps {
+    code: string;
+}
+export default function Flag(props: IFlagProps) {
     return (
-        <div>Flag</div>
+        <div>{props.code}</div>
     );
 }
