@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 
 import type { ICountryMedals, ISortKey } from '../types/types';
 import { sortMedals } from '@/lib/sort-medal-data';
+import Flag from '../components/Flag';
 import styles from './MedalTable.module.scss';
 
 interface IMedalTableProps {
@@ -56,11 +57,22 @@ export default function MedalTable({
                         <td>
                             {index + 1}
                         </td>
-                        <td className={styles.code}>{entry.code}</td>
-                        <td>{entry.gold}</td>
-                        <td>{entry.silver}</td>
-                        <td>{entry.bronze}</td>
-                        <td className={styles.total}>{entry.gold + entry.silver + entry.bronze}</td>
+                        <td className={styles.code}>
+                            <Flag code='code' />
+                            {entry.code}
+                        </td>
+                        <td>
+                            {entry.gold}
+                        </td>
+                        <td>
+                            {entry.silver}
+                        </td>
+                        <td>
+                            {entry.bronze}
+                        </td>
+                        <td className={styles.total}>
+                            {entry.gold + entry.silver + entry.bronze}
+                        </td>
                     </tr>
                 ))}
             </tbody>
