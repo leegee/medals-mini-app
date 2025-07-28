@@ -1,6 +1,6 @@
+/* Assuming any client will already have set these, including here just for the demo */
+
 :root {
-  --mma-clr-fg: grey;
-  --mma-font-primary: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
   padding: 1em;
 }
 
