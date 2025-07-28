@@ -1,4 +1,5 @@
 .medal-table {
+    table-layout: fixed;
     border-collapse: collapse;
     color: var(--mma-clr-fg);
     font-family: var(--mma-font-primary);
@@ -42,11 +43,6 @@
         td {
             border-bottom: 1pt solid #999;
 
-            &.code {
-                display: flex;
-                gap: 0.5em;
-            }
-
             &.code,
             &.total {
                 font-weight: bold;
@@ -59,7 +55,8 @@
     }
 
     th, td {
-        padding: 0.25em;
+        vertical-align: middle;
+        padding: .75em;
     }
 
 }
