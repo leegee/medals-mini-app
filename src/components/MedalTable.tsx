@@ -13,8 +13,24 @@ export default function MedalTable({
 
     return (
         <table>
-            <thead></thead>
-            <tbody></tbody>
+            <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Gold</th>
+                    <th>Silver</th>
+                    <th>Bronze</th>
+                </tr>
+            </thead>
+            <tbody>
+                {medals.map((entry) => (
+                    <tr key={entry.code}>
+                        <td>{entry.code}</td>
+                        <td>{entry.gold}</td>
+                        <td>{entry.silver}</td>
+                        <td>{entry.bronze}</td>
+                    </tr>
+                ))}
+            </tbody>
         </table>
     );
 }
