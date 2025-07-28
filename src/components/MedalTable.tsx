@@ -35,7 +35,7 @@ export default function MedalTable({
         <table className={styles['medal-table']}>
             <thead>
                 <tr>
-                    <th />
+                    <th colSpan={2} />
                     <th>
                         <button className={styles.gold + ' ' + styles.disc} onClick={() => handleSort('gold')} />
                     </th>
@@ -51,8 +51,11 @@ export default function MedalTable({
                 </tr>
             </thead>
             <tbody>
-                {sorted.map((entry) => (
+                {sorted.map((entry, index) => (
                     <tr key={entry.code}>
+                        <td>
+                            {index + 1}
+                        </td>
                         <td className={styles.code}>{entry.code}</td>
                         <td>{entry.gold}</td>
                         <td>{entry.silver}</td>
