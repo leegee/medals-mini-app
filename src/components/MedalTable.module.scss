@@ -2,36 +2,38 @@
     border-collapse: collapse;
     color: var(--mma-clr-fg);
     font-family: var(--mma-font-primary);
-    font-size: 14pt;
+    font-size: 1rem;
 
     thead {
         th {
             border-bottom: 2pt solid #666;
-        }
+            
+            button {
+                border:none;
+                cursor: pointer;
+                
+                &.disc {
+                    font-size: 1.25em;
+                    min-width: 1em;
+                    min-height: 1em;
+                    border-radius: 50%;
+                }
 
-        button {
-            border:none;
+                &.gold {
+                    background-color: gold;
+                }
 
-            &.disc {
-                min-width: 1em;
-                min-height: 1em;
-                border-radius: 50%;
-            }
+                &.silver {
+                    background-color: silver;
+                }
 
-            &.gold {
-                background-color: gold;
-            }
+                &.bronze {
+                    background-color: #CD7F32;
+                }
 
-            &.silver {
-                background-color: silver;
-            }
-
-            &.bronze {
-                background-color: #CD7F32;
-            }
-
-            &.total {
-                background-color: none;
+                &.total {
+                    background-color: none;
+                }
             }
         }
     }

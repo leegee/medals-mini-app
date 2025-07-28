@@ -1,0 +1,16 @@
+$flag-height: 17px;
+
+.flag {
+  width: 28px;
+  height: $flag-height;
+  background-image: url('/flags.png');
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+// 13 flags in the sprite:
+@for $i from 0 through 12 {
+  .flag-#{$i} {
+    background-position: 0 (-$i * $flag-height);
+  }
+}
