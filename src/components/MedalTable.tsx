@@ -31,28 +31,27 @@ export default function MedalTable({
     }
 
     return (
-        <>
-            <p>Sort by {sortKey}</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Country</th>
-                        <th onClick={() => handleSort('gold')}>Gold</th>
-                        <th onClick={() => handleSort('silver')}>Silver</th>
-                        <th onClick={() => handleSort('bronze')}>Bronze</th>
+        <table>
+            <thead>
+                <tr>
+                    <th>Country</th>
+                    <th onClick={() => handleSort('gold')}>Gold</th>
+                    <th onClick={() => handleSort('silver')}>Silver</th>
+                    <th onClick={() => handleSort('bronze')}>Bronze</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {sorted.map((entry) => (
+                    <tr key={entry.code}>
+                        <td>{entry.code}</td>
+                        <td>{entry.gold}</td>
+                        <td>{entry.silver}</td>
+                        <td>{entry.bronze}</td>
+                        <td>{entry.gold + entry.silver + entry.bronze}</td>
                     </tr>
-                </thead>
-                <tbody>
-                    {sorted.map((entry) => (
-                        <tr key={entry.code}>
-                            <td>{entry.code}</td>
-                            <td>{entry.gold}</td>
-                            <td>{entry.silver}</td>
-                            <td>{entry.bronze}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </>
+                ))}
+            </tbody>
+        </table>
     );
 }
