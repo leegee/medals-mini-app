@@ -1,5 +1,4 @@
-$border-color: #666;
-$border-width: 2pt;
+@use '../scss/variables.scss' as *;
 
 .medal-table {
     table-layout: fixed;
