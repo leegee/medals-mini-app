@@ -1,8 +1,7 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import MedalTable from '../components/MedalTable';
 
-export default function Home() {
+export default async function MedalPage() {
   return (
-    <main></main>
+    <MedalTable medals={[]} sortKey='gold' />
   );
 }
