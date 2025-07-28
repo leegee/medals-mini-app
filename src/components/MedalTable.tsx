@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 
 import type { ICountryMedals, ISortKey } from '../types/types';
 import { sortMedals } from '@/lib/sort-medal-data';
-import './MedalTable.module.scss';
+import styles from './MedalTable.module.scss';
 
 interface IMedalTableProps {
     medals: ICountryMedals[];
@@ -32,14 +32,22 @@ export default function MedalTable({
     }
 
     return (
-        <table>
+        <table className={styles['medal-table']}>
             <thead>
                 <tr>
-                    <th>Country</th>
-                    <th onClick={() => handleSort('gold')}>Gold</th>
-                    <th onClick={() => handleSort('silver')}>Silver</th>
-                    <th onClick={() => handleSort('bronze')}>Bronze</th>
-                    <th onClick={() => handleSort('total')}>Total</th>
+                    <th />
+                    <th>
+                        <button className={styles.gold + ' ' + styles.disc} onClick={() => handleSort('gold')} />
+                    </th>
+                    <th>
+                        <button className={styles.silver + ' ' + styles.disc} onClick={() => handleSort('silver')} />
+                    </th>
+                    <th>
+                        <button className={styles.bronze + ' ' + styles.disc} onClick={() => handleSort('bronze')} />
+                    </th>
+                    <th>
+                        <button className={styles.total} onClick={() => handleSort('total')}>TOTAL</button>
+                    </th>
                 </tr>
             </thead>
             <tbody>

@@ -1,0 +1,33 @@
+.medal-table {
+    color: var(--mma-clr-fg);
+    font-family: var(--mma-font-primary);
+    font-size: 14pt;
+
+    thead {
+        button {
+            border:none;
+
+            &.disc {
+                min-width: 1em;
+                min-height: 1em;
+                border-radius: 50%;
+            }
+
+            &.gold {
+                background-color: gold;
+            }
+
+            &.silver {
+                background-color: silver;
+            }
+
+            &.bronze {
+                background-color: #CD7F32;
+            }
+
+            &.total {
+                background-color: none;
+            }
+        }
+    }
+}
