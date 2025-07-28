@@ -40,6 +40,11 @@
         td {
             border-bottom: 1pt solid #999;
 
+            &.code {
+                display: flex;
+                gap: 0.5em;
+            }
+
             &.code,
             &.total {
                 font-weight: bold;

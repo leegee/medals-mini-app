@@ -1,14 +1,11 @@
 :root {
   --mma-clr-fg: grey;
   --mma-font-primary: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
+  padding: 1em;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
-
-body {
-  padding: 1em;
 }
