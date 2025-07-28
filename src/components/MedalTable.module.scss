@@ -1,3 +1,6 @@
+$border-color: #666;
+$border-width: 2pt;
+
 .medal-table {
     table-layout: fixed;
     border-collapse: collapse;
@@ -7,11 +10,19 @@
 
     thead {
         th {
-            border-bottom: 2pt solid #666;
-            
+            border-bottom: $border-width solid $border-color;
+            vertical-align: middle;
+
+            &.selected {
+                border-top: $border-width solid $border-color;
+            }
+
             button {
                 border:none;
                 cursor: pointer;
+                 vertical-align: middle;
+                display: inline-flex;
+                align-items: center;
                 
                 &.disc {
                     font-size: 1.25em;
@@ -41,7 +52,7 @@
 
     tbody {
         td {
-            border-bottom: 1pt solid #999;
+            border-bottom: 1px solid #999;
 
             &.code,
             &.total {

@@ -37,16 +37,16 @@ export default function MedalTable({
             <thead>
                 <tr>
                     <th colSpan={2} />
-                    <th>
+                    <th className={sortKey === 'gold' ? styles.selected : ''}>
                         <button className={styles.gold + ' ' + styles.disc} onClick={() => handleSort('gold')} />
                     </th>
-                    <th>
+                    <th className={sortKey === 'silver' ? styles.selected : ''}>
                         <button className={styles.silver + ' ' + styles.disc} onClick={() => handleSort('silver')} />
                     </th>
-                    <th>
+                    <th className={sortKey === 'bronze' ? styles.selected : ''}>
                         <button className={styles.bronze + ' ' + styles.disc} onClick={() => handleSort('bronze')} />
                     </th>
-                    <th>
+                    <th className={sortKey === 'total' ? styles.selected : ''}>
                         <button className={styles.total} onClick={() => handleSort('total')}>TOTAL</button>
                     </th>
                 </tr>
@@ -76,6 +76,6 @@ export default function MedalTable({
                     </tr>
                 ))}
             </tbody>
-        </table>
+        </table >
     );
 }
