@@ -1,3 +1,7 @@
+'use client';
+
+import { useRouter, useSearchParams } from 'next/navigation';
+
 import type { ICountryMedals, ISortKey } from '../types/types';
 
 interface IMedalTableProps {
@@ -7,30 +11,42 @@ interface IMedalTableProps {
 
 export default function MedalTable({
     medals,
-    sortKey,
+    sortKey: initialSortKey,
 }: IMedalTableProps) {
+    const router = useRouter();
+    const searchParams = useSearchParams();
 
+    const sortKey = (searchParams.get('sort') as ISortKey) || initialSortKey;
+
+    function handleSort(key: ISortKey) {
+        const params = new URLSearchParams(searchParams.toString());
+        params.set('sort', key);
+        router.push('/?' + params.toString());
+    }
 
     return (
-        <table>
-            <thead>
-                <tr>
-                    <th>Country</th>
-                    <th>Gold</th>
-                    <th>Silver</th>
-                    <th>Bronze</th>
-                </tr>
-            </thead>
-            <tbody>
-                {medals.map((entry) => (
-                    <tr key={entry.code}>
-                        <td>{entry.code}</td>
-                        <td>{entry.gold}</td>
-                        <td>{entry.silver}</td>
-                        <td>{entry.bronze}</td>
+        <>
+            <p>Sort by {sortKey}</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th onClick={() => handleSort('gold')} >Country</th>
+                        <th onClick={() => handleSort('gold')} >Gold</th>
+                        <th onClick={() => handleSort('gold')} >Silver</th>
+                        <th onClick={() => handleSort('gold')} >Bronze</th>
                     </tr>
-                ))}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {medals.map((entry) => (
+                        <tr key={entry.code}>
+                            <td>{entry.code}</td>
+                            <td>{entry.gold}</td>
+                            <td>{entry.silver}</td>
+                            <td>{entry.bronze}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </>
     );
 }
