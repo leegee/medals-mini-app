@@ -53,11 +53,11 @@ export default function MedalTable({
             <tbody>
                 {sorted.map((entry) => (
                     <tr key={entry.code}>
-                        <td>{entry.code}</td>
+                        <td className={styles.code}>{entry.code}</td>
                         <td>{entry.gold}</td>
                         <td>{entry.silver}</td>
                         <td>{entry.bronze}</td>
-                        <td>{entry.gold + entry.silver + entry.bronze}</td>
+                        <td className={styles.total}>{entry.gold + entry.silver + entry.bronze}</td>
                     </tr>
                 ))}
             </tbody>

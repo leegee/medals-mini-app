@@ -1,9 +1,14 @@
 .medal-table {
+    border-collapse: collapse;
     color: var(--mma-clr-fg);
     font-family: var(--mma-font-primary);
     font-size: 14pt;
 
     thead {
+        th {
+            border-bottom: 2pt solid #666;
+        }
+
         button {
             border:none;
 
@@ -30,4 +35,24 @@
             }
         }
     }
+
+    tbody {
+        td {
+            border-bottom: 1pt solid #999;
+
+            &.code,
+            &.total {
+                font-weight: bold;
+            }
+
+            &.total {
+                color: #333;
+            }
+        }
+    }
+
+    th, td {
+        padding: 0.25em;
+    }
+
 }
