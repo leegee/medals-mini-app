@@ -16,6 +16,9 @@ export default async function MedalPage({ searchParams }: IMedalPageProps) {
   const medals: ICountryMedals[] = await getMedalData();
 
   return (
-    <MedalTable medals={medals} sortKey={sortKey} />
+    <>
+      <h1>Medal Count</h1>
+      <MedalTable medals={medals} sortKey={sortKey} />
+    </>
   );
 }
