@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 
 import type { ICountryMedals, ISortKey } from '../types/types';
-import { sortMedals } from '@/lib/sort-medal-data';
+import { compareMedals } from '@/lib/sort-medal-data';
 import Flag from '../components/Flag';
 import styles from './MedalTable.module.scss';
 
@@ -23,7 +23,7 @@ export default function MedalTable({
     const sortKey = (searchParams.get('sort') as ISortKey) || initialSortKey;
 
     const sorted = useMemo(() => {
-        return [...initialMedals].sort((a, b) => sortMedals(a, b, sortKey));
+        return [...initialMedals].sort((a, b) => compareMedals(a, b, sortKey));
     }, [initialMedals, sortKey]);
 
     function handleSort(key: ISortKey) {

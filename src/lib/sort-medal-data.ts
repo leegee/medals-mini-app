@@ -16,7 +16,7 @@ import { ICountryMedals, ISortKey } from "@/types/types";
  * @param sortBy 
  * @returns 
  */
-export function sortMedals(a: ICountryMedals, b: ICountryMedals, sortKey: ISortKey) {
+export function compareMedals(a: ICountryMedals, b: ICountryMedals, sortKey: ISortKey) {
     const aTotal = a.gold + a.silver + a.bronze;
     const bTotal = b.gold + b.silver + b.bronze;
 
