@@ -30,10 +30,10 @@ export default function MedalTable({
             <table>
                 <thead>
                     <tr>
-                        <th onClick={() => handleSort('gold')} >Country</th>
-                        <th onClick={() => handleSort('gold')} >Gold</th>
-                        <th onClick={() => handleSort('gold')} >Silver</th>
-                        <th onClick={() => handleSort('gold')} >Bronze</th>
+                        <th>Country</th>
+                        <th onClick={() => handleSort('gold')}>Gold</th>
+                        <th onClick={() => handleSort('silver')}>Silver</th>
+                        <th onClick={() => handleSort('bronze')}>Bronze</th>
                     </tr>
                 </thead>
                 <tbody>
