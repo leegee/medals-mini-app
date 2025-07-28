@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 
 import type { ICountryMedals, ISortKey } from '../types/types';
 import { sortMedals } from '@/lib/sort-medal-data';
+import './MedalTable.module.scss';
 
 interface IMedalTableProps {
     medals: ICountryMedals[];
