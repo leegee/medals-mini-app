@@ -1,9 +1,10 @@
 'use client';
 
+import { useMemo } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 
 import type { ICountryMedals, ISortKey } from '../types/types';
-import { useMemo } from 'react';
+import { sortMedals } from '@/lib/sort-medal-data';
 
 interface IMedalTableProps {
     medals: ICountryMedals[];
@@ -22,19 +23,6 @@ export default function MedalTable({
     const sorted = useMemo(() => {
         return [...initialMedals].sort((a, b) => sortMedals(a, b, sortKey));
     }, [initialMedals, sortKey]);
-
-    function sortMedals(a: ICountryMedals, b: ICountryMedals, sortKey: ISortKey) {
-        switch (sortKey) {
-            case 'gold':
-                return b.gold - a.gold;
-            case 'silver':
-                return b.silver - a.silver;
-            case 'bronze':
-                return b.bronze - a.bronze;
-            default:
-                return 0;
-        }
-    }
 
     function handleSort(key: ISortKey) {
         const params = new URLSearchParams(searchParams.toString());
