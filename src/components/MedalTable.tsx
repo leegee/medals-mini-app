@@ -38,7 +38,7 @@ export default function MedalTable({
                     <th onClick={() => handleSort('gold')}>Gold</th>
                     <th onClick={() => handleSort('silver')}>Silver</th>
                     <th onClick={() => handleSort('bronze')}>Bronze</th>
-                    <th>Total</th>
+                    <th onClick={() => handleSort('total')}>Total</th>
                 </tr>
             </thead>
             <tbody>
